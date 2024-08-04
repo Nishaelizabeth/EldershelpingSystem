@@ -1,0 +1,84 @@
+{% include 'adminheader.html' %}
+    <section style="background: url(/static/images/IMG_2199.JPG) center center no-repeat;
+  background-size:cover;
+  background-attachment: scroll;
+  color: #cfcfcf;height: auto;
+        margin-top:80px;" id="home">
+       <div class="overlay">
+           <div class="container">
+               <div class="row">  
+<center>
+<form method="post">
+<!-- {% if data['updater']%}
+<h1 align="center">UPDATE REPLY</h1>
+<table class="table" style="width: 400px">
+<tr>
+	<th>NAME OF USER:</th>
+	<td>{{ data['updater'][0]['first_name']+" "+data['updater'][0]['last_name']}}</td>
+</tr>
+<tr>
+	<th>COMPLAINT</th>&emsp;
+	<td>{{ data['updater'][0]['feedback_description']}}</td>
+</tr>
+<tr>
+	<th>REPLY</th>
+	<td><input type="text" name="reply" value="{{ data['updater'][0]['reply']}}" class="form-control"></td>
+</tr>
+<tr>
+	<td colspan="2" align="center"><input type="submit" name="update" value="UPDATE" class="btn btn-info"></td>
+</tr>
+</table>
+{%else%}
+{%endif%} -->
+<br>
+<br>
+<h1 align="center">caregiver</h1>
+<table class="table" style="width: 800px">
+	<tr>
+		<th>NAME OF caregiver</th>
+		<th>PLACE</th>
+		<th>PHONE</th>
+		<th>EMAIL</th>
+		<th>QUALIFICATION</th>
+		<th>Status</th>
+	</tr>
+	{% for row in data['hos'] %}
+	<tr>
+		<td>{{row['Fname']}}  {{row['Lname']}} </td>
+		
+		<td>{{row['Place']}}</td>
+		<td>{{row['Phone']}}</td>
+		<td>{{row['Email']}}</td>
+		<td>{{row['qualification']}}</td>
+
+		{% if row['Usertype']=="pending" %}
+		<td>
+			<a href="?action=accept&id={{row['Login_id']}}" class="btn btn-danger">Accept</a>
+
+			<a href="?action=reject&id={{row['Login_id']}}" class="btn btn-warning">Reject</a>
+		</td>
+		{% elif row['Usertype']=="caregiver" %}
+		<td>Accept</td>
+		{% else %}
+		<td>Accept</td>
+
+		<td>{{row['usertype']}}</td>
+		{% endif %}
+
+		
+	</tr>
+	{% endfor %}
+</table>
+
+</form>
+</center>
+
+                           
+	  </div>
+           </div>
+           <br><br><br><br><br><br><br><br><br>
+       </div>  
+      
+   </section>
+
+{% include 'footer.html' %}

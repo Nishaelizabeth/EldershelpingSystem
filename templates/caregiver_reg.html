@@ -1,0 +1,69 @@
+{% include 'publicheader.html' %}
+
+  <section style="background: url(/static/images/pexels-cottonbro-studio-7231077.jpg) center center no-repeat;
+  background-size:cover;
+  background-attachment: scroll;
+  color: #cfcfcf;height: auto;
+        margin-top:80px;" id="home">
+       <div class="overlay">
+           <div class="container">
+               <div class="row">
+<center>
+	<form method="post">
+		
+		
+	<h1>Caregiver REGISTRATION</h1>
+	<table class="table" style="width:  700px">
+		<tr>
+			<th>First NAME</th>
+			<td><input type="text" name="fn" required class="form-control"></td>
+		</tr>
+		<tr>
+			<th>Last NAME</th>
+			<td><input type="text" name="ln" required class="form-control"></td>
+		</tr>
+		<tr>
+			<th>Place</th>
+			<td><input type="text" name="pl" required class="form-control"></td>
+		</tr>
+		<tr>
+			<th>PHONE</th>
+			<td><input type="text" name="phone" maxlength="10" required class="form-control"></td>
+		</tr>
+		<tr>
+			<th>EMAIL</th>
+			<td>
+			<input type="email" name="email" required class="form-control"></td>
+		</tr>
+		<tr>
+			<th>QUALIFICATION</th>
+			<td>
+			<input type="text" name="qualification" required class="form-control"></td>
+		</tr>	
+		<tr>
+			<th>USER NAME</th>
+			<td><input type="text" name="uname" required minlength="5" placeholder="User Name Must Be Atleast 5 Charecter " class="form-control" ></td>
+		</tr>
+		<tr>
+			<th>PASSWORD</th>
+			<td><input type="password" name="password" required minlength="8" placeholder="Password Must Be Atleast 8 Charecter" class="form-control"></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" name="submit" value="register" class="btn btn-primary"></td>
+		</tr>
+	</table>
+
+</center>
+</form>
+
+                      
+		
+  </div>
+           </div>
+          
+       </div>  
+      
+   </section>
+		   			
+
+{% include 'footer.html' %}

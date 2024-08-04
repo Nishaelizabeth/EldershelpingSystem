@@ -1,0 +1,83 @@
+{% include 'caregiver_header.html' %}
+    <section style="background: url(/static/images/nnurse.jpg) center center no-repeat;
+  background-size:cover;
+  background-attachment: scroll;
+  color: #cfcfcf;height: auto;
+        margin-top:80px;" id="home">
+       <div class="overlay">
+           <div class="container">
+               <div class="row">  
+<center>
+<form method="post">
+<!-- {% if data['updater']%}
+<h1 align="center">UPDATE REPLY</h1>
+<table class="table" style="width: 400px">
+<tr>
+	<th>NAME OF USER:</th>
+	<td>{{ data['updater'][0]['first_name']+" "+data['updater'][0]['last_name']}}</td>
+</tr>
+<tr>
+	<th>COMPLAINT</th>&emsp;
+	<td>{{ data['updater'][0]['feedback_description']}}</td>
+</tr>
+<tr>
+	<th>REPLY</th>
+	<td><input type="text" name="reply" value="{{ data['updater'][0]['reply']}}" class="form-control"></td>
+</tr>
+<tr>
+	<td colspan="2" align="center"><input type="submit" name="update" value="UPDATE" class="btn btn-info"></td>
+</tr>
+</table>
+{%else%}
+{%endif%} -->
+<br>
+<br>
+<h1 align="center">Informations</h1>
+<table class="table" style="width: 800px">
+	<tr>
+		<th>Informations</th>
+		<!--<th>Details</th>-->
+		<th>Time</th>
+		<th>Total</th>
+		<th>Date</th>
+		<th>Status</th>
+	</tr>
+	{% for row in data['app'] %}
+	<tr>
+		<td>{{row['Info']}} </td>
+		
+		<!--<td>{{row['Details']}}</td>-->
+		<td>{{row['Time']}}</td>
+		<td>{{row['Total']}}</td>
+		<td>{{row['Date']}}</td>
+		<td>{{row['Status']}}</td>
+
+
+
+		{% if row['status']=="pending" %}
+		<td>
+			<a href="?action=accept&id={{row['appoinment_id']}}" class="btn btn-danger">Accept</a>
+
+			<a href="?action=reject&id={{row['appoinment_id']}}" class="btn btn-warning">Reject</a>
+		</td>
+		{% else %}
+		<td>{{row['status']}}</td>
+		{% endif %}
+
+		
+	</tr>
+	{% endfor %}
+</table>
+
+</form>
+</center>
+
+                           
+	  </div>
+           </div>
+           <br><br><br><br><br><br><br><br><br>
+       </div>  
+      
+   </section>
+
+{% include 'footer.html' %}

@@ -1,0 +1,40 @@
+{% include 'caregiver_header.html' %}
+
+   <section style="background: url(/static/images/being-a-caregiver.jpg) center center no-repeat;
+  background-size:cover;
+  background-attachment: scroll;
+  color: #cfcfcf;height: auto;
+        margin-top:80px;" id="home">
+       <div class="overlay">
+           <div class="container">
+               <div class="row">
+                <center>
+<h1>Add Work Details</h1>
+<form method="post">
+<table  class="table" style="width: 500px">
+	<tr>
+		<th>Work Details</th>
+		<td> <input type="text"  class="form-control" required name="details"></td>
+	</tr>
+
+	<tr>
+		<th>Amount</th>
+		<td> <input type="text"  class="form-control" required="" name="amount"></td>
+	</tr>
+	<tr>
+		
+		<td colspan="2" align="center"><input type="submit"  class="btn btn-success" name="submit" value="ASSIGN"></td>
+	</tr>
+</table>
+
+</form>
+  </div>
+           </div>
+           <br><br><br><br><br><br><br><br><br>
+       </div>  
+      
+   </section>
+</center>	   					
+	
+
+{% include 'footer.html' %}
